@@ -1,4 +1,4 @@
-package oipdii.comun.seed;
+package oip.dii.comun.seed;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
