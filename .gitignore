@@ -30,4 +30,14 @@ build/
 !**/src/test/**/build/
 
 ### VS Code ###
-.vscode/
+###.vscode/###
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+node/
+node_modules/
+e2e/*.js
+e2e/*.map
