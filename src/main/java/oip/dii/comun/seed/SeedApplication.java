@@ -12,6 +12,24 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class SeedApplication {
+  @Configuration
+  @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
+  protected static class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+      http
+        .httpBasic()
+      .and()
+        .authorizeRequests()
+          .antMatchers("/index.html", "/", "/home", "/login").permitAll()
+          .anyRequest().authenticated();
+    }
+  }
+
+  @RequestMapping("/user")
+  public Principal user(Principal user) {
+    return user;
+  }
 
   @RequestMapping("/resource")
   public Map<String,Object> home() {

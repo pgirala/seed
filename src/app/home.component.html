@@ -1,0 +1,8 @@
+<h1>Greeting</h1>
+<div [hidden]="!authenticated()">
+	<p>El ID es {{greeting.id}}</p>
+	<p>El contenido es {{greeting.content}}</p>
+</div>
+<div [hidden]="authenticated()">
+	<p>Identifícate para ver tu saludo</p>
+</div>
