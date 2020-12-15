@@ -3,17 +3,20 @@ package oip.dii.comun.seed;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import java.security.Principal;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @SpringBootApplication
 @RestController
 public class SeedApplication {
   @Configuration
-  @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
   protected static class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
